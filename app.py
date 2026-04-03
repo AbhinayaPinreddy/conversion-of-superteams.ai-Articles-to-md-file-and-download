@@ -9,6 +9,28 @@ from converter import (
 )
 from utils import fix_image_urls
 
+# ---------------------------
+# Page config (MUST be first Streamlit command)
+# ---------------------------
+st.set_page_config(
+    page_title="HTML → Markdown Converter",
+    layout="wide"
+)
+
+#  HIDE TOOLBAR (Deploy + menu)
+st.markdown("""
+<style>
+/* Hide Deploy + menu */
+[data-testid="stToolbar"] {
+    display: none !important;
+}
+
+/* Remove header spacing */
+[data-testid="stHeader"] {
+    display: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # ---------------------------
 # Helper: Generate filename
@@ -20,15 +42,9 @@ def generate_filename(url):
 
 
 # ---------------------------
-# Page config
+# UI
 # ---------------------------
-st.set_page_config(
-    page_title="HTML → Markdown Converter",
-    page_icon="📝",
-    layout="wide"
-)
-
-st.title("📝 HTML to Markdown Converter")
+st.title(" HTML to Markdown Converter")
 st.caption("Convert blog articles into clean Markdown (with images + code blocks)")
 
 # Input
