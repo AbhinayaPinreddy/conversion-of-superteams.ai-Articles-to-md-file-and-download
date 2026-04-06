@@ -4,7 +4,6 @@ from extractor import fetch_html, extract_article
 from converter import (
     convert_to_markdown,
     trim_markdown_tail,
-    shrink_superteams_logo,
     normalize_heading_breaks,
 )
 from utils import fix_image_urls
