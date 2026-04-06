@@ -80,7 +80,6 @@ if st.button("Convert to Markdown"):
         progress.progress(90)
         markdown = trim_markdown_tail(markdown)
         markdown = normalize_heading_breaks(markdown)
-        markdown = shrink_superteams_logo(markdown)
 
         progress.progress(100)
 
