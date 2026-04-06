@@ -103,35 +103,6 @@ def guess_code_language(code_text: str) -> str:
 
     return ""
 
-    def html_img(alt: str, src: str) -> str:
-        alt_escaped = alt.replace('"', "&quot;")
-        return f'<img src="{src}" alt="{alt_escaped}" width="{width_px}" />'
-
-    # Replace link-wrapped images: [![alt](src)](href)
-    link_img_pat = re.compile(
-        r"\[!\[(?P<alt>[^\]]*?)\]\((?P<src>[^)]+)\)\]\((?P<href>[^)]+)\)",
-        re.MULTILINE,
-    )
-
-    def link_img_repl(m: re.Match) -> str:
-        alt = m.group("alt")
-        if "superteams" not in alt.lower():
-            return m.group(0)
-        return f'[{html_img(alt, m.group("src"))}]({m.group("href")})'
-
-    markdown = link_img_pat.sub(link_img_repl, markdown)
-
-    # Replace plain images: ![alt](src)
-    img_pat = re.compile(r"!\[(?P<alt>[^\]]*?)\]\((?P<src>[^)]+)\)", re.MULTILINE)
-
-    def img_repl(m: re.Match) -> str:
-        alt = m.group("alt")
-        if "superteams" not in alt.lower():
-            return m.group(0)
-        return html_img(alt, m.group("src"))
-
-    return img_pat.sub(img_repl, markdown)
-
 
 def trim_markdown_tail(markdown: str) -> str:
     """
