@@ -9,7 +9,7 @@ Convert web articles (blog posts, documentation pages) into clean **Markdown** f
 - **Converts** HTML to Markdown with sensible handling for:
   - Code blocks (`<pre>` / `<code>`) with fenced blocks and guessed language (`python`, `javascript`, etc.) when the site does not label them correctly.
   - Placeholder-based conversion so **indentation inside code fences is not stripped**.
-- **Post-processing**: trims footer sections (e.g. “More from our Editors”, newsletter), normalizes headings that were glued to links, and optionally shrinks Superteams-branded logo images in the output.
+- **Post-processing**: trims footer sections (e.g. “More from our Editors”, newsletter), normalizes headings that were glued to links
 
 ## Requirements
 
@@ -65,8 +65,3 @@ streamlit run app.py
 
 - Output quality depends on how the source site structures HTML. Some pages may need a larger or different extraction strategy in `extractor.py`.
 - **Syntax colors** in previews depend on your editor or viewer (e.g. VS Code / Cursor Markdown preview); fenced blocks use language tags like ` ```python ` when detection succeeds.
-- The **Superteams logo** shrinker targets images whose `alt` text contains “Superteams”. Adjust `shrink_superteams_logo` in `converter.py` if you use this for other sites.
-
-## License
-
-Add your license here if applicable.
