@@ -103,15 +103,6 @@ def guess_code_language(code_text: str) -> str:
 
     return ""
 
-
-def shrink_superteams_logo(markdown: str, width_px: int = 140) -> str:
-    """
-    Shrink only Superteams-related images (logo) in the generated Markdown.
-
-    We detect them by matching `alt` text containing "Superteams" so we don't
-    affect the article's content images.
-    """
-
     def html_img(alt: str, src: str) -> str:
         alt_escaped = alt.replace('"', "&quot;")
         return f'<img src="{src}" alt="{alt_escaped}" width="{width_px}" />'
