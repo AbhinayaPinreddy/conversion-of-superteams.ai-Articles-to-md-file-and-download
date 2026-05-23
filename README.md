@@ -65,3 +65,8 @@ streamlit run app.py
 
 - Output quality depends on how the source site structures HTML. Some pages may need a larger or different extraction strategy in `extractor.py`.
 - **Syntax colors** in previews depend on your editor or viewer (e.g. VS Code / Cursor Markdown preview); fenced blocks use language tags like ` ```python ` when detection succeeds.
+## Collaboration
+
+This project was created in collaboration with [Superteams.ai](https://superteams.ai).
+
+The collaboration involved contributing technical content, sharing insights, and building projects/blogs focused on learning, innovation, and community engagement in the tech ecosystem.
